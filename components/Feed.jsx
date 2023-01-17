@@ -13,10 +13,8 @@ const Feed = () => {
     <>
       {!filter && (
         <section className="flex flex-wrap gap-4 px-4 md:p-0 w-full h-full md:w-10/12 items-center mx-auto my-8">
-          {Blogs.map((blog) => (
-            <div>
-                <Card blog={blog} key={blog.id} />
-            </div>
+          {Blogs.map((blog) => ( 
+                <Card blog={blog} key={blog.id} /> 
           ))}
         </section>
       )}

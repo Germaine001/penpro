@@ -1,36 +1,56 @@
-import Link from 'next/link'
-import React from 'react'
-import {ImBlog} from 'react-icons/im'
-
+import Link from "next/link";
+import { ImBlog } from "react-icons/im";
+import { BiDotsVertical } from "react-icons/bi";
 
 const Navbar = () => {
   return (
     <>
-    <div className="flex py-5">
-        <div className="flex-1 flex px-10 justify-evenly items-center"> 
-            {/* logo */}
-            <div className="flex gap-2 items-center">
-                <ImBlog size={20} className=" text-green-500"/>
-                <span className="text-lg font-serif italic font-bold text-green-800">Penpro</span>
-            </div>
-            {/* navigation */}
-            <ul className="flex gap-4">
-            <Link href='/'><li>Home</li></Link>
-            <Link href='/'><li>Services</li></Link>
-            <Link href='/'><li>About Us</li></Link>
-            <Link href='/'><li>Contact Us</li></Link>
-            </ul>
-        </div>
-        <div className="flex-1 px-5">
-        <ul className="flex gap-4 items-center justify-end">
-        <Link href='/'><li>Login</li></Link>
-            <Link href='/'><li className="text-white bg-green-800 px-2 py-1 rounded-full">Sign up</li></Link>
-            </ul>  
-        </div>
-    </div>
+      <div className="flex h-16 bg-white drop-shadow-sm relative">
+        <div className="flex-1 flex px-5 md:px-10 md:justify-evenly items-center">
+          
+          {/* logo */}
+          <div className="flex gap-2 items-center">
+            <ImBlog size={20} className=" text-green-600" />
+            <span className="text-xl font-serif italic font-bold text-green-800">
+              Penpro
+            </span>
+          </div>
 
+          {/* navigation */}
+          <ul className="hidden md:flex gap-6">
+            <Link href="/">
+             <a><li>Home</li></a> 
+            </Link>
+            <Link href="/">
+             <a> <li>Services</li></a>
+            </Link>
+            <Link href="/">
+              <a><li>About us</li></a>
+            </Link>
+            <Link href="/">
+             <a><li>Contact</li></a> 
+            </Link>
+          </ul>
+        </div>
+
+        {/* user auth */}
+        <div className="flex-1 px-4 gap-4 text-sm md:text-base whitespace-nowrap flex items-center justify-end">
+          <ul className="flex gap-3 items-center">
+            <Link href="/">
+              <li>Sign In</li>
+            </Link>
+            <Link href="/">
+              <li className="text-white bg-slate-900 px-2 py-1 rounded-full">
+                Get Started
+              </li>
+            </Link>
+          </ul>
+        </div>
+
+        
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

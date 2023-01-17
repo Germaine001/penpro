@@ -1,4 +1,7 @@
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-
-export {Navbar, Hero}
+import SecondaryNav from "./SecondaryNav";
+import Feed from "./Feed";
+import Card from "./Card";
+import Taskbar from "./Taskbar";
+export {Navbar, Hero, SecondaryNav, Feed, Card, Taskbar}

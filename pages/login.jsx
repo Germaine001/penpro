@@ -32,7 +32,7 @@ const Login = () => {
       <h2 className="font-bold text-xl md:text-2xl">
         Welcome to <span className="italic text-[#31947b]">Penpro</span>
       </h2>
-      <p>"Inspire, Create, Connect, Publish, Thrive."</p>
+      <p>Inspire, Create, Connect, Publish, Thrive.</p>
       <div className="border rounded w-72 py-6 flex flex-col items-center">
         Register for free with
         <div

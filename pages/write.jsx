@@ -19,7 +19,7 @@ const Write = () => {
         
         return () => { 
         }
-      }, [])
+      }, [router, session])
       
       if(!session) return <p>Please sign in .... <span className="text-blue-700" onClick={()=>signIn()}>Signin</span></p>;
 

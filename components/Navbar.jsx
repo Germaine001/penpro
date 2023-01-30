@@ -56,7 +56,7 @@ const Navbar = () => {
               </Link>
             )}
             {session && (
-              <li className="rounded text-red-600" onClick={() => signOut()}>
+              <li className="rounded text-red-900" onClick={() => signOut()}>
                 SignOut
               </li>
             )}

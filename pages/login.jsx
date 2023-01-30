@@ -10,7 +10,7 @@ const Login = () => {
 
   if (session) {
     router.push("/");
-    return
+    return;
   }
 
   return (
@@ -39,7 +39,7 @@ const Login = () => {
           className="flex border p-4 rounded mt-6 gap-4 items-center"
           onClick={() => signIn()}
         >
-          <FcGoogle size={20} /> Creat Account
+          <FcGoogle size={20} /> Create Account
         </div>
       </div>
     </div>

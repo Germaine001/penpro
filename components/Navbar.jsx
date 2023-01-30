@@ -50,8 +50,8 @@ const Navbar = () => {
             )}
             {session && (
               <Link href={'/write'}>
-              <li className="rounded flex p-2">
-              <BsPen size={16} />
+              <li className="rounded flex px-2 py-1 gap-1 text-slate-50 justify-center items-center bg-black">
+              <BsPen size={16} /> Write
               </li>
               </Link>
             )}

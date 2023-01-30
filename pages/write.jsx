@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from 'next/router';
-import { BsEye } from 'react-icons/bs';
+import { BsEye, BsFilePost } from 'react-icons/bs';
+import { FiSend } from 'react-icons/fi';
 
 const Write = () => {
     const { data: session } = useSession();
@@ -25,7 +26,7 @@ const Write = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(content);
+        router.push({pathname:'/login'});
     }
 
   return (
@@ -59,7 +60,7 @@ const Write = () => {
             <textarea type="text" placeholder='Express yourself here..' className='form-input rounded placeholder:text-gray-400' onChange={(e)=>setContent((prev)=>{return{...prev, bodytext: e.target.value}})}></textarea>
         </span>
 
-        <button className='bg-slate-900 text-white px-6 py-2 rounded shadow w-fit flex items-center justify-evenly gap-2'><BsEye size={20}/> Preview</button>
+        <button className='bg-slate-900 text-white px-6 py-2 rounded shadow w-fit flex items-center justify-evenly gap-2'><FiSend size={20}/> Publish</button>
        </form>
     </div>
   )

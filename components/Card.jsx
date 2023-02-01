@@ -12,7 +12,7 @@ const CardImg = ({ img, views, createdAt, category, author }) => (
     <div className="relative h-[180px] lg:h-[230px] w-full rounded-t-lg overflow-hidden">
       <Image
         src={img}
-        layout="fill"
+        fill
         sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
@@ -22,7 +22,7 @@ const CardImg = ({ img, views, createdAt, category, author }) => (
         priority
         className="object-cover"
       />
-     <div className="absolute bottom-0 w-full flex items-center justify-between gap-1 font-light text-xs sm:text-sm text-slate-50 bg-slate-500/40 py-2 px-4">
+     <div className="absolute bottom-0 w-full flex items-center justify-between gap-1 font-light text-xs sm:text-sm text-slate-50 bg-slate-500/40 backdrop-blur-sm py-2 px-4">
         <div>
             <p>{views? <> {millify(views)} views</> : <> No views</>}</p>
             <p>{createdAt ? moment(createdAt).format("DD/MM/YY") : ''}</p> 

@@ -1,49 +1,55 @@
-import React from "react";
-import { BiHomeAlt } from "react-icons/bi";
+import React from "react"; 
 import { FiFeather } from "react-icons/fi";
-import { BsBookmarkStar, BsBriefcase, BsPerson } from "react-icons/bs";
+import { BsBook, BsBookmarkStar, BsBriefcase, BsPen, BsPerson } from "react-icons/bs";
 import Link from "next/link";
+import { useSession,signIn,signOut } from 'next-auth/react'
+import Image from "next/image";
 
 const Taskbar = () => {
+  const {data: session} = useSession();
+
   return (
     <>
-      <div className="w-full md:hidden flex gap-4 fixed bottom-0 border px-4 py-3 justify-evenly items-center bg-white">
+     {session && <div className="w-full md:hidden flex gap-4 fixed bottom-0 px-4 py-3 justify-evenly items-center bg-black text-slate-50">
         <Link href="/">
-          <a>
             <span className="">
-              <BiHomeAlt size={28} />
+              <BsBook size={28} />
             </span>
-          </a>
         </Link>
         <Link href="/">
-          <a>
             <span className="">
               <BsBookmarkStar size={28} />
             </span>
-          </a>
+        </Link>
+        <Link href="/write" > 
+            <div className="">
+              <BsPen size={28} />
+            </div> 
         </Link>
         <Link href="/">
-          <a>
-            <span className="">
-              <FiFeather size={30} />
-            </span>
-          </a>
-        </Link>
-        <Link href="/">
-          <a>
             <span className="">
               <BsBriefcase size={28} />
             </span>
-          </a>
         </Link>
-        <Link href="/">
-          <a>
+        <Link href="/profile">
             <span className="">
-              <BsPerson size={28} />
+            <div className="relative h-8 w-8 rounded-full overflow-hidden">
+                    <Image
+                      src={session?.user.image || "/writer.png"}
+                      fill
+                      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                      blurDataURL={session?.user.image || "/writer.png"}
+                      placeholder="blur"
+                      alt={"properties"}
+                      priority
+                      className="object-cover"
+                    />
+                  </div>
             </span>
-          </a>
         </Link>
-      </div>
+      </div>}
     </>
   );
 };
